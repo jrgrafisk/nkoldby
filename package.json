@@ -1,25 +1,27 @@
 {
-  "name": "nicolaikoldby",
+  "name": "nicolaikoldby-api",
   "version": "1.0.0",
-  "description": "Nicolai Koldby - Portfolio & Blog Website",
-  "private": true,
+  "description": "Express API server for nicolaikoldby.dk",
+  "main": "src/index.js",
   "scripts": {
-    "setup": "npm run setup:db && npm run setup:backend && npm run setup:frontend",
-    "setup:db": "docker-compose up -d",
-    "setup:backend": "cd backend/server && npm install",
-    "setup:frontend": "cd frontend && npm install",
-    "dev": "npm run dev:backend & npm run dev:frontend & npm run dev:strapi",
-    "dev:backend": "cd backend/server && npm run dev",
-    "dev:frontend": "cd frontend && npm start",
-    "dev:strapi": "cd backend/strapi && npm run develop",
-    "build": "npm run build:backend && npm run build:frontend",
-    "build:backend": "cd backend/server && npm run build",
-    "build:frontend": "cd frontend && npm run build",
-    "start": "npm run start:backend & npm run start:frontend",
-    "start:backend": "cd backend/server && npm start",
-    "start:frontend": "cd frontend && npm start"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "seed": "node src/scripts/seed.js"
   },
-  "keywords": ["portfolio", "blog", "nicolai", "koldby"],
+  "keywords": ["api", "express", "auth"],
   "author": "Nicolai Koldby",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+"cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^9.0.0",
+    "bcryptjs": "^2.4.3",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.10.0",
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
