@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio and blog of Nicolai Koldby - showcasing digital projects and insights">
+  <meta property="og:title" content="Nicolai Koldby - Portfolio">
+  <meta property="og:description" content="Explore my latest projects and blog posts">
+  <meta property="og:type" content="website">
+  <title>Nicolai Koldby - Portfolio</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html" class="logo">NK</a>
+      </div>
+      <nav class="navbar-menu" id="navMenu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <div class="nav-auth" id="navAuth">
+          <a href="login.html" class="nav-link">Login</a>
+          <a href="login.html?mode=register" class="btn btn-primary">Sign Up</a>
+        </div>
+        <div class="nav-user" id="navUser" style="display: none;">
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
+          <button class="btn btn-secondary" onclick="logout()">Logout</button>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Nicolai Koldby</h1>
+        <p class="hero-subtitle">Digital Projects & Web Development</p>
+        <div class="hero-cta">
+          <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
+          <a href="blog.html" class="btn btn-secondary">Read Blog</a>
+        </div>
+      </div>
+
+      <!-- Hero Video (Lazy Loaded) -->
+      <div class="hero-video-container">
+        <video id="heroVideo" class="hero-video" muted autoplay loop playsinline>
+          <source src="" type="video/mp4" data-src="path/to/hero-video.mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <div class="video-placeholder"></div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured-section">
+      <div class="container">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid" id="featuredProjects">
+          <!-- Populated from API -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="blog-section">
+      <div class="container">
+        <h2>Latest Posts</h2>
+        <div class="posts-grid" id="latestPosts">
+          <!-- Populated from API -->
+        </div>
+        <div class="view-all">
+          <a href="blog.html" class="link-arrow">View All Posts →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <h2>Got a project in mind?</h2>
+          <p>Let's work together to bring your ideas to life.</p>
+          <a href="login.html?mode=register" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>Nicolai Koldby</h4>
+          <p>Web developer and digital project creator.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#" target="_blank">GitHub</a></li>
+            <li><a href="#" target="_blank">LinkedIn</a></li>
+            <li><a href="#" target="_blank">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nicolai Koldby. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/video-lazy-load.js"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>
