@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: nicolaikoldby-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nicolaikoldby
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - nicolaikoldby-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Adminer (Database UI - optional)
+  adminer:
+    image: adminer
+    container_name: nicolaikoldby-adminer
+    ports:
+      - "8080:8080"
+    networks:
+      - nicolaikoldby-network
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
+
+networks:
+  nicolaikoldby-network:
+    driver: bridge

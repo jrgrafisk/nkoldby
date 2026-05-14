@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog - Articles and insights from Nicolai Koldby">
+  <title>Blog - Nicolai Koldby</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="index.html" class="logo">NK</a>
+      </div>
+      <nav class="navbar-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <div class="nav-auth" id="navAuth">
+          <a href="login.html" class="nav-link">Login</a>
+          <a href="login.html?mode=register" class="btn btn-primary">Sign Up</a>
+        </div>
+        <div class="nav-user" id="navUser" style="display: none;">
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
+          <button class="btn btn-secondary" onclick="logout()">Logout</button>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="blog-section">
+      <div class="container">
+        <h1>Blog</h1>
+        <p class="text-center">Articles, insights, and thoughts on web development</p>
+        <div class="posts-grid" id="allPosts">
+          <!-- Populated from API -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>Nicolai Koldby</h4>
+          <p>Web developer and digital project creator.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#" target="_blank">GitHub</a></li>
+            <li><a href="#" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nicolai Koldby. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/video-lazy-load.js"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>
